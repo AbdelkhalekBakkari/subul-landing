@@ -905,37 +905,104 @@ body {
 /* ============================================================
    RESPONSIVE
    ============================================================ */
+
+/* ── Tablet: 768px – 900px ── */
 @media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-terminal { display: none; }
+  /* Topbar */
   .topbar-nav { display: none; }
-  .tracks-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .footer-links { flex-wrap: wrap; }
+  .topbar-inner { padding: 10px 20px; }
+  .topbar-logo .logo-smartovate { height: 36px; }
+  .topbar-logo .logo-subul      { height: 56px; }
+
+  /* Hero */
+  .hero { padding: 72px 24px 48px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 0; }
+  .hero-terminal { display: none; }
+  .hero-title { font-size: clamp(32px, 6vw, 56px); }
+  .hero-desc { max-width: 100%; }
+
+  /* Tracks */
+  .tracks-grid { grid-template-columns: repeat(2, 1fr); padding: 0 24px 40px; gap: 16px; }
+
+  /* Apply */
+  .apply-box { padding: 32px 24px; }
+  .apply-cards { flex-wrap: wrap; }
+  .apply-card { min-width: 200px; flex: 1 1 calc(50% - 12px); }
+
+  /* Footer */
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; padding: 24px; }
+  .footer-links { flex-wrap: wrap; gap: 8px; }
+
+  /* Section */
+  .section-header { padding: 48px 24px 24px; }
 }
 
+/* ── Mobile: ≤ 600px ── */
 @media (max-width: 600px) {
-  .hero { padding: 56px 16px 40px; }
-  .hero-title { font-size: clamp(28px, 8vw, 52px); }
-  .hero-sub { font-size: clamp(13px, 3.5vw, 16px); }
-  .hero-cta { flex-direction: column; gap: 10px; }
-  .hero-cta .btn { width: 100%; text-align: center; }
-  .hero-meta { flex-direction: column; }
-  .meta-cell { border-right: none; border-bottom: 1px solid var(--border); }
-  .meta-cell:last-child { border-bottom: none; }
-  .tracks-grid { grid-template-columns: 1fr; padding: 0 16px 32px; }
-  .apply-box { padding: 24px 20px; }
-  .apply-cards { flex-direction: column; }
-  .apply-card { min-width: unset; width: 100%; }
-  .topbar-inner { padding: 10px 16px; }
+  /* Topbar */
+  .topbar-inner { padding: 8px 16px; gap: 8px; }
+  .topbar-logo { gap: 8px; }
   .topbar-logo .logo-smartovate { height: 28px; }
-  .topbar-logo .logo-subul { height: 44px; }
-  .footer-inner { padding: 16px; }
-  .footer-logos { flex-wrap: wrap; gap: 8px; }
-  .footer-links { flex-direction: column; gap: 8px; }
-  .footer-link { width: 100%; text-align: center; justify-content: center; display: flex; align-items: center; }
+  .topbar-logo .logo-subul      { height: 44px; }
+
+  /* Hero */
+  .hero { padding: 56px 16px 40px; }
+  .hero-eyebrow { font-size: 9px; padding: 4px 12px 4px 6px; }
+  .hero-title { font-size: clamp(26px, 9vw, 42px); letter-spacing: -0.02em; }
+  .hero-title .line-3 { font-size: 0.6em; }
+  .hero-sub { font-size: clamp(12px, 3.5vw, 15px); }
+  .hero-desc { font-size: 14px; }
+
+  /* CTA buttons — stack vertically */
+  .hero-actions { flex-direction: column; gap: 10px; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+
+  /* Meta strip */
+  .hero-meta { flex-direction: column; }
+  .meta-cell { border-right: none; border-bottom: 1px solid var(--border); padding: 12px 16px; }
+  .meta-cell:last-child { border-bottom: none; }
+
+  /* Tracks */
+  .tracks-grid { grid-template-columns: 1fr; padding: 0 16px 32px; gap: 14px; }
+  .track-card { padding: 20px; }
+  .card-title { font-size: 16px; }
+  .card-desc { font-size: 12px; }
+
+  /* Apply */
+  .apply-box { padding: 24px 16px; }
+  .apply-cards { flex-direction: column; gap: 12px; }
+  .apply-card { min-width: unset; width: 100%; }
+  .apply-cta-row { flex-direction: column; gap: 10px; }
+  .apply-cta-row .btn { width: 100%; justify-content: center; }
+
+  /* Section */
   .section-header { padding: 40px 16px 20px; }
-  .section-title { font-size: clamp(20px, 6vw, 32px); }
+  .section-title { font-size: clamp(20px, 7vw, 30px); }
+  .section-sub { font-size: 13px; }
+
+  /* Terminal (hidden on mobile anyway) */
+  .hero-terminal { display: none; }
+
+  /* Footer */
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; padding: 20px 16px; }
+  .footer-logos { flex-wrap: wrap; gap: 8px; align-items: center; }
+  .footer-logos .logo-smartovate { height: 28px; }
+  .footer-logos .logo-subul      { height: 44px; }
+  .footer-logos .logo-sep        { font-size: 14px; }
+  .footer-brand { flex-wrap: wrap; gap: 6px; }
+  .footer-links { flex-direction: column; gap: 8px; width: 100%; }
+  .footer-link  { width: 100%; justify-content: center; display: flex; align-items: center; padding: 8px 12px; }
+
+  /* Page wrap padding */
+  .page-wrap { padding: 0 16px; }
+}
+
+/* ── Very small screens: ≤ 380px ── */
+@media (max-width: 380px) {
+  .hero-title { font-size: clamp(22px, 10vw, 36px); }
+  .topbar-logo .logo-smartovate { height: 22px; }
+  .topbar-logo .logo-subul      { height: 36px; }
+  .btn { padding: 9px 16px; font-size: 12px; }
 }
 
 /* ── LOGOS ── */
