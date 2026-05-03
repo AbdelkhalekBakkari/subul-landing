@@ -1602,7 +1602,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -1755,7 +1755,62 @@ body {
 }
 /* ===== END PARTNERS REDESIGN ===== */
 
+/* ===== K8S + HASHICORP PARTNER CARDS ===== */
+.partner-card-k8s::before {
+  background: linear-gradient(90deg, #326ce5, #6fa8dc);
+}
+.partner-card-hashi::before {
+  background: linear-gradient(90deg, #000000, #5c4ee5);
+}
+.partner-card-k8s:hover {
+  box-shadow: 0 20px 60px rgba(50,108,229,0.15);
+}
+.partner-card-hashi:hover {
+  box-shadow: 0 20px 60px rgba(92,78,229,0.15);
+}
+.partner-logo-img-k8s {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  filter: none;
+}
+.partner-logo-img-hashi {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  filter: none;
+}
+.partner-count-k8s { color: #326ce5; }
+.partner-count-hashi { color: #7c3aed; }
+.partner-cert-item-k8s::before { background: #326ce5; }
+.partner-cert-item-hashi::before { background: #7c3aed; }
+.partner-cert-code-k8s {
+  background: rgba(50,108,229,0.12);
+  color: #6fa8dc;
+}
+.partner-cert-code-hashi {
+  background: rgba(124,58,237,0.12);
+  color: #a78bfa;
+}
+.partner-cta-k8s { color: #6fa8dc; border-color: rgba(111,168,220,0.3); }
+.partner-cta-hashi { color: #a78bfa; border-color: rgba(167,139,250,0.3); }
+/* ===== END K8S + HASHICORP ===== */
+
+
 </style>
+  <meta property="og:title" content="Préparez 15 Certifications Cloud · IA · DevOps — Subul × Smartovate 2026" />
+  <meta property="og:description" content="Stage d'été intensif 100% remote. 15 parcours de préparation certifiants : AWS, Microsoft Azure, Kubernetes, HashiCorp. Rejoignez la prochaine génération d'ingénieurs." />
+  <meta property="og:image" content="https://subul.co.uk/stage-ete-certificats/og-certs.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://subul.co.uk/stage-ete-certificats" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Subul × Smartovate" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Préparez 15 Certifications Cloud · IA · DevOps — Subul × Smartovate 2026" />
+  <meta name="twitter:description" content="Stage d'été intensif 100% remote. 15 parcours de préparation certifiants : AWS, Microsoft Azure, Kubernetes, HashiCorp." />
+  <meta name="twitter:image" content="https://subul.co.uk/stage-ete-certificats/og-certs.jpg" />
+  <meta name="description" content="Stage d'été Subul × Smartovate 2026 — 15 parcours de préparation aux certifications Cloud, IA & DevOps. AWS, Microsoft, Kubernetes, HashiCorp. 100% remote." />
 </head>
 <body>
   <nav class="topbar">
@@ -2450,6 +2505,53 @@ body {
         </a>
       </div>
 
+
+      <!-- Kubernetes Card -->
+      <div class="partner-card-new partner-card-k8s">
+        <div class="partner-logo-area">
+          <img class="partner-logo-img-k8s" src="data:image/png;base64,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" alt="Kubernetes" />
+        </div>
+        <div class="partner-count-row">
+          <span class="partner-count-num partner-count-k8s">3</span>
+          <span class="partner-count-label">parcours de<br>préparation</span>
+        </div>
+        <ul class="partner-cert-list">
+          <li class="partner-cert-item partner-cert-item-k8s">
+            <span class="partner-cert-code partner-cert-code-k8s">CKA</span> Certified Kubernetes Administrator
+          </li>
+          <li class="partner-cert-item partner-cert-item-k8s">
+            <span class="partner-cert-code partner-cert-code-k8s">CKS</span> Certified Kubernetes Security
+          </li>
+          <li class="partner-cert-item partner-cert-item-k8s">
+            <span class="partner-cert-code partner-cert-code-k8s">KCNA</span> Kubernetes Cloud Native Associate
+          </li>
+        </ul>
+        <a href="https://www.cncf.io/certification/cka/" target="_blank" class="partner-cta-link partner-cta-k8s">
+          Voir les certifications CNCF officielles →
+        </a>
+      </div>
+
+      <!-- HashiCorp Card -->
+      <div class="partner-card-new partner-card-hashi">
+        <div class="partner-logo-area">
+          <img class="partner-logo-img-hashi" src="data:image/png;base64,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" alt="HashiCorp" />
+        </div>
+        <div class="partner-count-row">
+          <span class="partner-count-num partner-count-hashi">2</span>
+          <span class="partner-count-label">parcours de<br>préparation</span>
+        </div>
+        <ul class="partner-cert-list">
+          <li class="partner-cert-item partner-cert-item-hashi">
+            <span class="partner-cert-code partner-cert-code-hashi">TA-004</span> Terraform Associate
+          </li>
+          <li class="partner-cert-item partner-cert-item-hashi">
+            <span class="partner-cert-code partner-cert-code-hashi">VA-003</span> Vault Associate
+          </li>
+        </ul>
+        <a href="https://developer.hashicorp.com/certifications" target="_blank" class="partner-cta-link partner-cta-hashi">
+          Voir les certifications HashiCorp officielles →
+        </a>
+      </div>
     </div>
   </div>
 </section>
