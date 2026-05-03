@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affiche – Stage Été 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  /* ── POSTER WRAPPER ── */
+  .poster {
+    width: 700px;
+    height: 700px;
+    position: relative;
+    overflow: hidden;
+    background: #080810;
+    flex-shrink: 0;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  /* ── BACKGROUND LAYERS ── */
+
+  /* Deep space gradient */
+  .bg-base {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, #1a0a3a 0%, transparent 65%),
+      radial-gradient(ellipse 60% 50% at 100% 100%, #0a1a1a 0%, transparent 55%),
+      #060610;
+    z-index: 0;
+  }
+
+  /* Geometric grid lines */
+  .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,165,80,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,165,80,0.07) 1px, transparent 1px);
+    background-size: 35px 35px;
+    z-index: 1;
+  }
+
+  /* Diagonal accent line — top left to bottom right */
+  .diag-line {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 900px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(200,165,80,0.35) 30%, rgba(200,165,80,0.6) 50%, rgba(200,165,80,0.35) 70%, transparent 100%);
+    transform: rotate(32deg);
+    transform-origin: center;
+    z-index: 2;
+  }
+  .diag-line2 {
+    position: absolute;
+    top: 120px;
+    left: -100px;
+    width: 900px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(200,165,80,0.15) 40%, rgba(200,165,80,0.3) 55%, transparent 100%);
+    transform: rotate(32deg);
+    transform-origin: center;
+    z-index: 2;
+  }
+
+  /* Corner ornament — top left */
+  .corner-tl {
+    position: absolute;
+    top: 28px;
+    left: 28px;
+    width: 50px;
+    height: 50px;
+    border-top: 2px solid rgba(200,165,80,0.7);
+    border-left: 2px solid rgba(200,165,80,0.7);
+    z-index: 10;
+  }
+  /* Corner ornament — bottom right */
+  .corner-br {
+    position: absolute;
+    bottom: 28px;
+    right: 28px;
+    width: 50px;
+    height: 50px;
+    border-bottom: 2px solid rgba(200,165,80,0.7);
+    border-right: 2px solid rgba(200,165,80,0.7);
+    z-index: 10;
+  }
+
+  /* Glow blobs */
+  .glow-top {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(180,130,40,0.22) 0%, transparent 70%);
+    z-index: 1;
+  }
+  .glow-center {
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(100,50,200,0.18) 0%, transparent 70%);
+    z-index: 1;
+  }
+
+  /* ── CONTENT ── */
+  .content {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    padding: 42px 48px 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* TOP ROW */
+  .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .logo-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #c8a550, #e8c870);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+  .logo-text {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+  }
+  .logo-text strong {
+    display: block;
+    color: rgba(200,165,80,0.9);
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+
+  .exclusive-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid rgba(200,165,80,0.35);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(200,165,80,0.85);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: rgba(200,165,80,0.07);
+  }
+  .pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #c8a550;
+    animation: pulseDot 2s ease infinite;
+  }
+  @keyframes pulseDot {
+    0%,100% { opacity:1; box-shadow: 0 0 0 0 rgba(200,165,80,0.6); }
+    50% { opacity:0.7; box-shadow: 0 0 0 4px rgba(200,165,80,0); }
+  }
+
+  /* HERO BLOCK */
+  .hero {
+    text-align: center;
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(200,165,80,0.6);
+    margin-bottom: 2px;
+  }
+
+  .hero-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 200px;
+    line-height: 0.85;
+    letter-spacing: -2px;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(200,165,80,0.85);
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Filled center of number */
+  .hero-number::before {
+    content: '15';
+    position: absolute;
+    left: 0; top: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 200px;
+    line-height: 0.85;
+    letter-spacing: -2px;
+    background: linear-gradient(180deg, #f0d880 0%, #c8a550 40%, #8a6020 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-stroke: 0px transparent;
+    opacity: 0.92;
+  }
+
+  .hero-word-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: -4px;
+  }
+
+  .hero-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200,165,80,0.4));
+  }
+  .hero-line.right {
+    background: linear-gradient(90deg, rgba(200,165,80,0.4), transparent);
+  }
+
+  .hero-cert {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 8px;
+    color: rgba(255,255,255,0.85);
+    white-space: nowrap;
+  }
+
+  .hero-sub {
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* DOMAIN PILLS */
+  .domains {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    justify-content: center;
+  }
+
+  .domain {
+    padding: 5px 13px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    border: 1px solid;
+    text-transform: uppercase;
+    font-family: 'Outfit', sans-serif;
+  }
+  .d1 { background: rgba(200,165,80,0.1);  border-color: rgba(200,165,80,0.3);  color: #d4b060; }
+  .d2 { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.6); }
+
+  /* FEATURES */
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px 20px;
+  }
+
+  .feat {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  .feat-check {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    background: rgba(200,165,80,0.18);
+    border: 1px solid rgba(200,165,80,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    color: #c8a550;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* BOTTOM BAR */
+  .bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(200,165,80,0.15);
+    padding-top: 16px;
+  }
+
+  .bottom-left {}
+  .tagline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 17px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.3;
+  }
+  .tagline span {
+    color: #c8a550;
+  }
+
+  .premium-note {
+    font-size: 9.5px;
+    color: rgba(255,255,255,0.25);
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    letter-spacing: 0.3px;
+  }
+  .premium-note::before {
+    content: '⚠';
+    color: rgba(200,165,80,0.4);
+    font-size: 9px;
+  }
+
+  .cta-block {
+    text-align: right;
+  }
+
+  .cta-url {
+    display: inline-block;
+    background: linear-gradient(135deg, #c8a550, #e8c870);
+    color: #080810;
+    font-family: 'Outfit', sans-serif;
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 11px 22px;
+    border-radius: 4px;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(200,165,80,0.35), 0 4px 16px rgba(0,0,0,0.5);
+  }
+
+  .places-tag {
+    font-size: 9px;
+    color: rgba(200,165,80,0.5);
+    margin-top: 5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: right;
+    font-weight: 600;
+  }
+
+  /* Subtle scan line overlay */
+  .scanlines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0,0,0,0.06) 3px,
+      rgba(0,0,0,0.06) 4px
+    );
+    z-index: 4;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="poster">
+  <!-- Backgrounds -->
+  <div class="bg-base"></div>
+  <div class="bg-grid"></div>
+  <div class="glow-top"></div>
+  <div class="glow-center"></div>
+  <div class="diag-line"></div>
+  <div class="diag-line2"></div>
+  <div class="scanlines"></div>
+
+  <!-- Corners -->
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+
+  <!-- Content -->
+  <div class="content">
+
+    <!-- TOP -->
+    <div class="top-row">
+      <div class="logo-area">
+        <div class="logo-icon">🤝</div>
+        <div class="logo-text">
+          <strong>Subul</strong>
+          Partenaire stratégique &amp; académique
+        </div>
+      </div>
+      <div class="exclusive-badge">
+        <span class="pulse-dot"></span>
+        Offre exclusive
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-eyebrow">Stage d'été 2026 · Accélérateur de carrière</div>
+      <div class="hero-number">15</div>
+      <div class="hero-word-row">
+        <div class="hero-line"></div>
+        <div class="hero-cert">Certifications</div>
+        <div class="hero-line right"></div>
+      </div>
+      <div class="hero-sub">Professionnelles &nbsp;·&nbsp; Standards internationaux</div>
+    </div>
+
+    <!-- DOMAINS -->
+    <div class="domains">
+      <span class="domain d1">🤖 AI &amp; AI Agents</span>
+      <span class="domain d1">☁️ Azure &amp; AWS</span>
+      <span class="domain d2">⚙️ DevOps &amp; CI/CD</span>
+      <span class="domain d2">📊 Data Engineering</span>
+      <span class="domain d1">🔒 Cybersecurity</span>
+      <span class="domain d2">💻 Full Stack Dev</span>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="features">
+      <div class="feat">
+        <div class="feat-check">✓</div>
+        <span>Certifications alignées aux standards internationaux</span>
+      </div>
+      <div class="feat">
+        <div class="feat-check">✓</div>
+        <span>Parcours structuré + accompagnement personnalisé</span>
+      </div>
+      <div class="feat">
+        <div class="feat-check">✓</div>
+        <span>Accès à des environnements techniques réels</span>
+      </div>
+      <div class="feat">
+        <div class="feat-check">✓</div>
+        <span>Profil hautement compétitif sur le marché</span>
+      </div>
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="bottom-bar">
+      <div class="bottom-left">
+        <div class="tagline">
+          Ne faites pas juste un stage.<br>
+          <span>Devenez certifié &amp; opérationnel.</span>
+        </div>
+        <div class="premium-note">Réservé aux stagiaires avec abonnement Premium Subul</div>
+      </div>
+      <div class="cta-block">
+        <a class="cta-url" href="https://subul.co.uk/stage-ete-certificats/">Découvrir l'offre →</a>
+        <div class="places-tag">🎯 Places limitées · Été 2026</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

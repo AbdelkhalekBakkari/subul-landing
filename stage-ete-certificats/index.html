@@ -1797,6 +1797,106 @@ body {
 /* ===== END K8S + HASHICORP ===== */
 
 
+
+/* ═══ POSTER MINIATURE STYLES ═══ */
+.poster-section {
+  padding: 60px 24px 80px;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poster-miniature-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.poster-miniature-link {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 24px 64px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poster-miniature-link:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 0 1px rgba(0,229,255,0.3), 0 32px 80px rgba(0,0,0,0.7), 0 0 40px rgba(0,229,255,0.12);
+}
+
+.poster-miniature-frame {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #0d0d1a;
+}
+
+.poster-iframe {
+  width: 700px;
+  height: 700px;
+  border: none;
+  transform: scale(0.4571);
+  transform-origin: top left;
+  pointer-events: none;
+  display: block;
+}
+
+.poster-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease, background 0.3s ease;
+  border-radius: 16px;
+}
+
+.poster-miniature-link:hover .poster-overlay {
+  opacity: 1;
+  background: rgba(0,0,0,0.45);
+}
+
+.poster-overlay-icon {
+  font-size: 40px;
+  color: #fff;
+  line-height: 1;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.8));
+}
+
+.poster-overlay-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(0,229,255,0.18);
+  border: 1px solid rgba(0,229,255,0.4);
+  padding: 6px 18px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 600px) {
+  .poster-miniature-frame {
+    width: 260px;
+    height: 260px;
+  }
+  .poster-iframe {
+    transform: scale(0.3714);
+  }
+}
+/* ═══ END POSTER MINIATURE STYLES ═══ */
 </style>
   <meta property="og:title" content="Préparez 15 Certifications Cloud · IA · DevOps — Subul × Smartovate 2026" />
   <meta property="og:description" content="Stage d'été intensif 100% remote. 15 parcours de préparation certifiants : AWS, Microsoft Azure, Kubernetes, HashiCorp. Rejoignez la prochaine génération d'ingénieurs." />
@@ -2556,6 +2656,34 @@ body {
   </div>
 </section>
 <!-- PARTNERS-SECTION-END -->
+
+
+<!-- POSTER-MINIATURE-SECTION -->
+<section class="poster-section">
+  <div class="section-header" style="text-align:center;">
+    <div class="section-eyebrow">Affiche</div>
+    <h2 class="section-title">L'affiche du Stage d'Été 2026</h2>
+    <p class="section-sub">Cliquez pour voir l'affiche en plein écran</p>
+  </div>
+  <div class="poster-miniature-wrap">
+    <a class="poster-miniature-link" href="affiche.html" target="_blank" title="Voir l'affiche en plein écran">
+      <div class="poster-miniature-frame">
+        <iframe
+          class="poster-iframe"
+          src="affiche.html"
+          scrolling="no"
+          tabindex="-1"
+          aria-hidden="true"
+        ></iframe>
+        <div class="poster-overlay">
+          <span class="poster-overlay-icon">&#9654;</span>
+          <span class="poster-overlay-label">Voir l'affiche</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+<!-- POSTER-MINIATURE-SECTION-END -->
 
 </main>
 
