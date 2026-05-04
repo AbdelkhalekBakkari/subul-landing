@@ -3,8 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>20 Sujets de Projets — Azure & AWS — Subul × Smartovate 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<title>28 Sujets de Projets Cloud — Par Domaine — Subul × Smartovate 2026</title>
+<meta name="description" content="28 projets pratiques organisés par domaine : AI Agent, IA & ML, Cybersécurité, DevOps, Data Analysis, Web Développement — avec GitHub, Jira et Miro.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
   :root {
     --bg-dark: #0a0d14;
@@ -563,6 +568,77 @@
   .card:nth-child(9)  { animation-delay: .45s; }
   .card:nth-child(10) { animation-delay: .50s; }
 
+
+/* ============================================================
+   DOMAIN BADGE & TOOL BADGES
+   ============================================================ */
+.card-domain-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: 6px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.card-subdomain {
+  font-size: 0.7rem;
+  color: var(--text-muted, #5a5f7a);
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-family: 'JetBrains Mono', monospace;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.card-subdomain::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.5;
+}
+.card-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.tool-badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 2px 8px;
+  border-radius: 5px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.04em;
+}
+.section-title {
+  border-left: 3px solid var(--accent, #00e5ff);
+  padding-left: 10px;
+}
+.card.multi { border-left: 2px solid rgba(99,102,241,0.4); }
+.card.multi:hover { border-color: rgba(99,102,241,0.8); }
+
+/* Filter buttons — domain style */
+.filter-btn.ai-agent.active { border-color:rgba(168,85,247,0.5);background:rgba(168,85,247,0.1);color:#a855f7; }
+.filter-btn.ai.active       { border-color:rgba(6,182,212,0.5);background:rgba(6,182,212,0.1);color:#06b6d4; }
+.filter-btn.cyber.active    { border-color:rgba(239,68,68,0.5);background:rgba(239,68,68,0.1);color:#ef4444; }
+.filter-btn.devops.active   { border-color:rgba(34,197,94,0.5);background:rgba(34,197,94,0.1);color:#22c55e; }
+.filter-btn.data.active     { border-color:rgba(245,158,11,0.5);background:rgba(245,158,11,0.1);color:#f59e0b; }
+.filter-btn.webdev.active   { border-color:rgba(59,130,246,0.5);background:rgba(59,130,246,0.1);color:#3b82f6; }
+
+
 /* ============================================================
    TOPBAR (from certifications page)
    ============================================================ */
@@ -662,7 +738,6 @@
 }
 
 
-
 /* ============================================================
    FOOTER (from certifications page)
    ============================================================ */
@@ -726,7 +801,6 @@
 }
 .footer-link:hover { color: var(--cyan); border-color: rgba(0,229,255,0.25); background: var(--cyan-glow); }
 
-
 /* ============================================================
    FOOTER LOGO SIZES (from certifications page)
    ============================================================ */
@@ -776,7 +850,6 @@
 }
 
 
-
 /* ============================================================
    RESPONSIVE TOPBAR (from certifications page)
    ============================================================ */
@@ -820,10 +893,10 @@
   .topbar-logo .logo-subul      { height: 34px; }
 
 </style>
+
 </head>
 <body>
 
-<!-- HEADER -->
   <nav class="topbar">
   <div class="topbar-inner">
 
@@ -840,8 +913,9 @@
 
     <nav class="topbar-nav">
       <a class="nav-link" href="https://subul.co.uk/stage-ete-certificats/">Certifications</a>
-      <a class="nav-link" href="#azure">Azure</a>
-      <a class="nav-link" href="#aws">AWS</a>
+      <a class="nav-link" href="#devops">DevOps</a>
+      <a class="nav-link" href="#ai">IA</a>
+      <a class="nav-link" href="#cybersec">Cyber</a>
     </nav>
 
   </div>
@@ -853,29 +927,17 @@
   <div class="hero-grid"></div>
   <div class="hero-inner">
     <div class="hero-eyebrow">Stage d'Été · Projets Pratiques 2026</div>
-    <h1>20 Sujets de Projets<br><span class="gradient-text">Azure &amp; AWS</span></h1>
+    <h1>28 Sujets de Projets<br><span class="gradient-text">Par Domaine</span></h1>
     <p class="hero-sub">
-      Sujets pratiques à réaliser avec vos comptes cloud pour consolider les
+      Projets pratiques organisés par domaine pour consolider les
       <strong style="color:var(--text-primary)">15 certifications</strong> du programme
-      Subul × Smartovate — Cloud, IA &amp; DevOps.
+      Subul × Smartovate — avec <strong style="color:var(--text-primary)">GitHub, Jira &amp; Miro</strong>.
     </p>
     <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-num">20</div>
-        <div class="stat-label">Sujets</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">15</div>
-        <div class="stat-label">Certifs ciblées</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">2</div>
-        <div class="stat-label">Clouds</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">6</div>
-        <div class="stat-label">Domaines</div>
-      </div>
+      <div class="stat"><div class="stat-num">28</div><div class="stat-label">Sujets</div></div>
+      <div class="stat"><div class="stat-num">6</div><div class="stat-label">Domaines</div></div>
+      <div class="stat"><div class="stat-num">15</div><div class="stat-label">Certifs ciblées</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Outils Agile</div></div>
     </div>
   </div>
 </section>
@@ -883,372 +945,441 @@
 <!-- FILTERS -->
 <div class="filters-section">
   <div class="filter-row">
-    <span class="filter-label">Filtrer par :</span>
-    <button class="filter-btn active" onclick="filterCards('all', this)">Tous (20)</button>
-    <button class="filter-btn azure" onclick="filterCards('azure', this)">☁️ Azure (10)</button>
-    <button class="filter-btn aws" onclick="filterCards('aws', this)">🟠 AWS (10)</button>
+    <span class="filter-label">Filtrer par domaine :</span>
+    <button class="filter-btn active" onclick="filterByDomain('all', this)">Tous (28)</button>
+    <button class="filter-btn ai-agent" onclick="filterByDomain('ai-agent', this)">🤖 AI Agent (2)</button>
+    <button class="filter-btn ai" onclick="filterByDomain('ai', this)">🧠 IA &amp; ML (4)</button>
+    <button class="filter-btn cyber" onclick="filterByDomain('cyber', this)">🔒 Cybersécurité (6)</button>
+    <button class="filter-btn devops" onclick="filterByDomain('devops', this)">⚙️ DevOps (8)</button>
+    <button class="filter-btn data" onclick="filterByDomain('data', this)">📊 Data Analysis (4)</button>
+    <button class="filter-btn webdev" onclick="filterByDomain('webdev', this)">🌐 Web Dev (4)</button>
   </div>
 </div>
 
 <!-- MAIN -->
 <main>
 
-  <!-- AZURE SECTION -->
-  <div id="azure">
+  <div id="ai-agent" class="domain-section">
     <div class="section-divider">
       <div class="divider-line"></div>
-      <div class="divider-label azure-div">☁️ Microsoft Azure — 10 sujets</div>
+      <div class="divider-label" style="color:#a855f7;border-color:rgba(168,85,247,0.25);background:rgba(168,85,247,0.1);">🤖 AI Agent — 2 sujets</div>
       <div class="divider-line"></div>
     </div>
-
     <div class="section-header">
-      <div class="section-title">Projets Azure</div>
-      <span class="count-badge">10 sujets</span>
+      <div class="section-title" style="--accent:#a855f7;">AI Agent</div>
+      <span class="count-badge">2 sujets</span>
     </div>
-
-    <div class="cards-grid" id="azure-grid">
-
-      <div class="card azure" data-cloud="azure">
-        <div class="card-header">
-          <span class="card-num">#01</span>
-          <span class="card-platform azure"><span class="platform-icon">☁️</span>Azure</span>
-        </div>
-        <div class="card-domain">Infrastructure · Scalabilité</div>
-        <div class="card-title">Application Web Scalable avec CI/CD Azure</div>
-        <p class="card-desc">Héberger une application Node.js ou Python sur Azure App Service avec auto-scaling configurable et un pipeline CI/CD complet via Azure DevOps et GitHub Actions.</p>
-        <div class="card-tags">
-          <span class="tag">AZ-204</span>
-          <span class="tag">AZ-400</span>
-          <span class="tag">App Service</span>
-          <span class="tag">Azure DevOps</span>
-        </div>
-      </div>
-
-      <div class="card azure" data-cloud="azure">
-        <div class="card-header">
-          <span class="card-num">#02</span>
-          <span class="card-platform azure"><span class="platform-icon">☁️</span>Azure</span>
-        </div>
-        <div class="card-domain">Gouvernance · Sécurité</div>
-        <div class="card-title">Infrastructure Sécurisée avec Azure Policy & RBAC</div>
-        <p class="card-desc">Déployer un environnement multi-ressources avec gouvernance centralisée, contrôle d'accès RBAC granulaire et conformité automatisée via Azure Policy.</p>
-        <div class="card-tags">
-          <span class="tag">AZ-104</span>
-          <span class="tag">AZ-500</span>
-          <span class="tag">Azure Policy</span>
-          <span class="tag">RBAC</span>
-        </div>
-      </div>
-
-      <div class="card azure" data-cloud="azure">
+    <div class="cards-grid domain-grid" data-domain="ai-agent">
+      <div class="card azure" data-domain="ai-agent">
         <div class="card-header">
           <span class="card-num">#03</span>
-          <span class="card-platform azure"><span class="platform-icon">☁️</span>Azure</span>
+          <span class="card-platform azure">☁️ Azure</span>
         </div>
-        <div class="card-domain">IA · Chatbot</div>
+        <div class="card-domain-badge" style="color:#a855f7;background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.25);">🤖 AI Agent</div>
+        <div class="card-subdomain">Chatbot · Multi-canal</div>
         <div class="card-title">Chatbot Intelligent avec Azure Bot Service + OpenAI</div>
-        <p class="card-desc">Construire un assistant virtuel connecté à Azure Cognitive Services et Azure OpenAI, déployé sur plusieurs canaux (Teams, Web, WhatsApp).</p>
-        <div class="card-tags">
-          <span class="tag">AI-102</span>
-          <span class="tag">AZ-204</span>
-          <span class="tag">Bot Service</span>
-          <span class="tag">OpenAI</span>
-        </div>
+        <p class="card-desc">Construire un assistant virtuel connecté à Azure Cognitive Services et Azure OpenAI, déployé sur plusieurs canaux (Teams, Web, WhatsApp). Gérer les conversations, le contexte et les intentions.</p>
+        <div class="card-tags"><span class="tag azure">AI-102</span><span class="tag azure">AZ-204</span><span class="tag azure">Bot Service</span><span class="tag azure">OpenAI</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span><span class="tool-badge">Miro</span></div>
       </div>
-
-      <div class="card azure" data-cloud="azure">
+      <div class="card aws" data-domain="ai-agent">
         <div class="card-header">
-          <span class="card-num">#04</span>
-          <span class="card-platform azure"><span class="platform-icon">☁️</span>Azure</span>
+          <span class="card-num">#21</span>
+          <span class="card-platform aws">🟠 AWS</span>
         </div>
-        <div class="card-domain">Architecture · Résilience</div>
-        <div class="card-title">Architecture Haute Disponibilité Multi-Région</div>
-        <p class="card-desc">Concevoir une solution résiliente avec Azure Traffic Manager, Load Balancer applicatif et zones de disponibilité, avec basculement automatique testé.</p>
-        <div class="card-tags">
-          <span class="tag">AZ-305</span>
-          <span class="tag">AZ-700</span>
-          <span class="tag">Traffic Manager</span>
-          <span class="tag">HA/DR</span>
-        </div>
+        <div class="card-domain-badge" style="color:#a855f7;background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.25);">🤖 AI Agent</div>
+        <div class="card-subdomain">Agent Autonome · LLM</div>
+        <div class="card-title">Agent IA Autonome avec AWS Bedrock + LangChain</div>
+        <p class="card-desc">Concevoir un agent IA autonome capable de planifier et exécuter des tâches multi-étapes via AWS Bedrock (Claude/Llama), LangChain et des outils connectés (recherche web, base de données, API).</p>
+        <div class="card-tags"><span class="tag aws">AIF-C01</span><span class="tag aws">Bedrock</span><span class="tag aws">LangChain</span><span class="tag aws">Lambda</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span><span class="tool-badge">Miro</span></div>
       </div>
-
-      <div class="card azure" data-cloud="azure">
-        <div class="card-header">
-          <span class="card-num">#05</span>
-          <span class="card-platform azure"><span class="platform-icon">☁️</span>Azure</span>
-        </div>
-        <div class="card-domain">IA · MLOps</div>
-        <div class="card-title">Pipeline MLOps sur Azure Machine Learning</div>
-        <p class="card-desc">Automatiser l'entraînement, la validation et le déploiement de modèles ML avec Azure ML Studio, intégration MLflow et déclencheurs CI/CD.</p>
-        <div class="card-tags">
-          <span class="tag">AI-102</span>
-          <span class="tag">AZ-400</span>
-          <span class="tag">Azure ML</span>
-          <span class="tag">MLflow</span>
-        </div>
-      </div>
-
-      <div class="card azure" data-cloud="azure">
-        <div class="card-header">
-          <span class="card-num">#06</span>
-          <span class="card-platform azure"><span class="platform-icon">☁️</span>Azure</span>
-        </div>
-        <div class="card-domain">Sécurité · SIEM</div>
-        <div class="card-title">SIEM Cloud-Native avec Azure Monitor & Sentinel</div>
-        <p class="card-desc">Mettre en place un système de surveillance avec alertes intelligentes, tableaux de bord de sécurité et réponses automatisées aux incidents via Azure Sentinel.</p>
-        <div class="card-tags">
-          <span class="tag">AZ-500</span>
-          <span class="tag">Azure Sentinel</span>
-          <span class="tag">Log Analytics</span>
-        </div>
-      </div>
-
-      <div class="card azure" data-cloud="azure">
-        <div class="card-header">
-          <span class="card-num">#07</span>
-          <span class="card-platform azure"><span class="platform-icon">☁️</span>Azure</span>
-        </div>
-        <div class="card-domain">Data · Analytics</div>
-        <div class="card-title">Data Lake Analytics avec Azure Synapse + Power BI</div>
-        <p class="card-desc">Ingérer, transformer et visualiser des données massives via un pipeline Azure Data Factory → Synapse Analytics → Power BI avec actualisation automatique.</p>
-        <div class="card-tags">
-          <span class="tag">DP-900</span>
-          <span class="tag">AZ-305</span>
-          <span class="tag">Synapse</span>
-          <span class="tag">Power BI</span>
-        </div>
-      </div>
-
-      <div class="card azure" data-cloud="azure">
-        <div class="card-header">
-          <span class="card-num">#08</span>
-          <span class="card-platform azure"><span class="platform-icon">☁️</span>Azure</span>
-        </div>
-        <div class="card-domain">Réseau · Sécurité</div>
-        <div class="card-title">Réseau Hub-and-Spoke Sécurisé avec Azure Firewall</div>
-        <p class="card-desc">Concevoir une topologie réseau d'entreprise avec VNet peering, Azure Firewall Premium, VPN Gateway site-à-site et NSG hierarchiques.</p>
-        <div class="card-tags">
-          <span class="tag">AZ-700</span>
-          <span class="tag">Azure Firewall</span>
-          <span class="tag">VNet</span>
-          <span class="tag">VPN GW</span>
-        </div>
-      </div>
-
-      <div class="card azure" data-cloud="azure">
-        <div class="card-header">
-          <span class="card-num">#09</span>
-          <span class="card-platform azure"><span class="platform-icon">☁️</span>Azure</span>
-        </div>
-        <div class="card-domain">Serverless · Event-driven</div>
-        <div class="card-title">Traitement d'Événements avec Azure Functions + Event Grid</div>
-        <p class="card-desc">Créer un système de traitement d'événements en temps réel sans serveur avec Azure Functions, Event Grid, Service Bus et stockage Cosmos DB.</p>
-        <div class="card-tags">
-          <span class="tag">AZ-204</span>
-          <span class="tag">Functions</span>
-          <span class="tag">Event Grid</span>
-          <span class="tag">Cosmos DB</span>
-        </div>
-      </div>
-
-      <div class="card azure" data-cloud="azure">
-        <div class="card-header">
-          <span class="card-num">#10</span>
-          <span class="card-platform azure"><span class="platform-icon">☁️</span>Azure</span>
-        </div>
-        <div class="card-domain">Identité · Zero Trust</div>
-        <div class="card-title">Gestion des Identités avec Azure AD B2C & OAuth2</div>
-        <p class="card-desc">Implémenter l'authentification OAuth2/OIDC pour une application multi-tenant avec Azure AD B2C, politiques personnalisées et Conditional Access.</p>
-        <div class="card-tags">
-          <span class="tag">AZ-500</span>
-          <span class="tag">AZ-204</span>
-          <span class="tag">Azure AD B2C</span>
-          <span class="tag">OAuth2</span>
-        </div>
-      </div>
-
-    </div><!-- /azure-grid -->
+    </div>
   </div>
 
-  <!-- AWS SECTION -->
-  <div id="aws">
+  <div id="ai" class="domain-section">
     <div class="section-divider">
       <div class="divider-line"></div>
-      <div class="divider-label aws-div">🟠 Amazon Web Services — 10 sujets</div>
+      <div class="divider-label" style="color:#06b6d4;border-color:rgba(6,182,212,0.25);background:rgba(6,182,212,0.1);">🧠 IA & ML — 4 sujets</div>
       <div class="divider-line"></div>
     </div>
-
     <div class="section-header">
-      <div class="section-title">Projets AWS</div>
-      <span class="count-badge">10 sujets</span>
+      <div class="section-title" style="--accent:#06b6d4;">IA & ML</div>
+      <span class="count-badge">4 sujets</span>
     </div>
-
-    <div class="cards-grid" id="aws-grid">
-
-      <div class="card aws" data-cloud="aws">
+    <div class="cards-grid domain-grid" data-domain="ai">
+      <div class="card azure" data-domain="ai">
         <div class="card-header">
-          <span class="card-num">#11</span>
-          <span class="card-platform aws"><span class="platform-icon">🟠</span>AWS</span>
+          <span class="card-num">#05</span>
+          <span class="card-platform azure">☁️ Azure</span>
         </div>
-        <div class="card-domain">Infrastructure · Architecture</div>
-        <div class="card-title">Architecture Three-Tier sur AWS avec Auto Scaling</div>
-        <p class="card-desc">Déployer une application web en 3 couches (EC2, RDS Multi-AZ, S3) avec Application Load Balancer, Auto Scaling Group et CloudFront.</p>
-        <div class="card-tags">
-          <span class="tag aws">SAA-C03</span>
-          <span class="tag aws">EC2</span>
-          <span class="tag aws">RDS</span>
-          <span class="tag aws">ALB</span>
-        </div>
+        <div class="card-domain-badge" style="color:#06b6d4;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.25);">🧠 IA & ML</div>
+        <div class="card-subdomain">MLOps · Automatisation</div>
+        <div class="card-title">Pipeline MLOps sur Azure Machine Learning</div>
+        <p class="card-desc">Automatiser l'entraînement, la validation et le déploiement de modèles ML avec Azure ML Studio, intégration MLflow et déclencheurs CI/CD. Versioning des modèles et A/B testing inclus.</p>
+        <div class="card-tags"><span class="tag azure">AI-102</span><span class="tag azure">AZ-400</span><span class="tag azure">Azure ML</span><span class="tag azure">MLflow</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span></div>
       </div>
-
-      <div class="card aws" data-cloud="aws">
-        <div class="card-header">
-          <span class="card-num">#12</span>
-          <span class="card-platform aws"><span class="platform-icon">🟠</span>AWS</span>
-        </div>
-        <div class="card-domain">IaC · Automatisation</div>
-        <div class="card-title">Infrastructure as Code avec CloudFormation & Terraform</div>
-        <p class="card-desc">Automatiser le provisionnement complet d'un environnement AWS avec CloudFormation stacks imbriqués ou Terraform modules, avec drift detection.</p>
-        <div class="card-tags">
-          <span class="tag aws">SysOps</span>
-          <span class="tag aws">Developer</span>
-          <span class="tag aws">CloudFormation</span>
-          <span class="tag aws">Terraform</span>
-        </div>
-      </div>
-
-      <div class="card aws" data-cloud="aws">
-        <div class="card-header">
-          <span class="card-num">#13</span>
-          <span class="card-platform aws"><span class="platform-icon">🟠</span>AWS</span>
-        </div>
-        <div class="card-domain">Serverless · API</div>
-        <div class="card-title">API REST Serverless avec Lambda + API Gateway + DynamoDB</div>
-        <p class="card-desc">Construire une API REST scalable avec Lambda, API Gateway (REST ou HTTP), DynamoDB et Cognito pour l'authentification, le tout en Serverless Framework.</p>
-        <div class="card-tags">
-          <span class="tag aws">Developer</span>
-          <span class="tag aws">Lambda</span>
-          <span class="tag aws">DynamoDB</span>
-          <span class="tag aws">API GW</span>
-        </div>
-      </div>
-
-      <div class="card aws" data-cloud="aws">
+      <div class="card aws" data-domain="ai">
         <div class="card-header">
           <span class="card-num">#14</span>
-          <span class="card-platform aws"><span class="platform-icon">🟠</span>AWS</span>
+          <span class="card-platform aws">🟠 AWS</span>
         </div>
-        <div class="card-domain">IA · Vision</div>
+        <div class="card-domain-badge" style="color:#06b6d4;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.25);">🧠 IA & ML</div>
+        <div class="card-subdomain">Vision · Temps réel</div>
         <div class="card-title">Détection d'Anomalies en Temps Réel avec Amazon Rekognition</div>
-        <p class="card-desc">Analyser des images et vidéos en temps réel via Rekognition + Kinesis Video Streams, avec alertes SNS et archivage S3 des incidents détectés.</p>
-        <div class="card-tags">
-          <span class="tag aws">Cloud Practitioner</span>
-          <span class="tag aws">Rekognition</span>
-          <span class="tag aws">Kinesis</span>
-        </div>
+        <p class="card-desc">Analyser des images et vidéos en temps réel via Rekognition + Kinesis Video Streams, avec alertes SNS et archivage S3 des incidents détectés. Dashboard de monitoring inclus.</p>
+        <div class="card-tags"><span class="tag aws">AIF-C01</span><span class="tag aws">Rekognition</span><span class="tag aws">Kinesis</span><span class="tag aws">SNS</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span></div>
       </div>
-
-      <div class="card aws" data-cloud="aws">
+      <div class="card azure" data-domain="ai">
         <div class="card-header">
-          <span class="card-num">#15</span>
-          <span class="card-platform aws"><span class="platform-icon">🟠</span>AWS</span>
+          <span class="card-num">#22</span>
+          <span class="card-platform azure">☁️ Azure</span>
         </div>
-        <div class="card-domain">DevOps · CI/CD</div>
-        <div class="card-title">Pipeline CI/CD Complet avec CodePipeline + ECS Fargate</div>
-        <p class="card-desc">Automatiser le déploiement d'une application conteneurisée Docker sur ECS Fargate via CodePipeline, CodeBuild, ECR et blue/green deployment.</p>
-        <div class="card-tags">
-          <span class="tag aws">Developer</span>
-          <span class="tag aws">SysOps</span>
-          <span class="tag aws">CodePipeline</span>
-          <span class="tag aws">ECS Fargate</span>
-        </div>
+        <div class="card-domain-badge" style="color:#06b6d4;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.25);">🧠 IA & ML</div>
+        <div class="card-subdomain">NLP · Analyse de texte</div>
+        <div class="card-title">Analyse de Sentiment & NLP avec Azure Cognitive Services</div>
+        <p class="card-desc">Construire un pipeline d'analyse de texte (sentiment, entités, classification) avec Azure Text Analytics, intégration dans une API REST et tableau de bord Power BI en temps réel.</p>
+        <div class="card-tags"><span class="tag azure">AI-900</span><span class="tag azure">AI-102</span><span class="tag azure">Text Analytics</span><span class="tag azure">Power BI</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span><span class="tool-badge">Miro</span></div>
       </div>
-
-      <div class="card aws" data-cloud="aws">
+      <div class="card aws" data-domain="ai">
         <div class="card-header">
-          <span class="card-num">#16</span>
-          <span class="card-platform aws"><span class="platform-icon">🟠</span>AWS</span>
+          <span class="card-num">#23</span>
+          <span class="card-platform aws">🟠 AWS</span>
         </div>
-        <div class="card-domain">Sécurité · Zero Trust</div>
-        <div class="card-title">Sécurité Zero Trust avec IAM, GuardDuty & Security Hub</div>
-        <p class="card-desc">Implémenter IAM least privilege, AWS GuardDuty, Security Hub, KMS pour le chiffrement end-to-end et AWS Config pour la conformité continue.</p>
-        <div class="card-tags">
-          <span class="tag aws">Security Specialty</span>
-          <span class="tag aws">GuardDuty</span>
-          <span class="tag aws">KMS</span>
-        </div>
+        <div class="card-domain-badge" style="color:#06b6d4;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.25);">🧠 IA & ML</div>
+        <div class="card-subdomain">Génération · RAG</div>
+        <div class="card-title">Système RAG avec Amazon Bedrock + OpenSearch</div>
+        <p class="card-desc">Implémenter un système de Retrieval-Augmented Generation (RAG) pour une base de connaissances d'entreprise avec Amazon Bedrock, OpenSearch Serverless et une interface web React.</p>
+        <div class="card-tags"><span class="tag aws">AIF-C01</span><span class="tag aws">Bedrock</span><span class="tag aws">OpenSearch</span><span class="tag aws">React</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span><span class="tool-badge">Miro</span></div>
       </div>
-
-      <div class="card aws" data-cloud="aws">
-        <div class="card-header">
-          <span class="card-num">#17</span>
-          <span class="card-platform aws"><span class="platform-icon">🟠</span>AWS</span>
-        </div>
-        <div class="card-domain">Data · ETL</div>
-        <div class="card-title">Pipeline de Données avec AWS Glue + Athena + S3</div>
-        <p class="card-desc">Créer un pipeline ETL serverless pour analyser des datasets CSV/JSON stockés sur S3 via Glue Crawlers, transformations Python et requêtes Athena.</p>
-        <div class="card-tags">
-          <span class="tag aws">SAA-C03</span>
-          <span class="tag aws">Glue</span>
-          <span class="tag aws">Athena</span>
-          <span class="tag aws">S3</span>
-        </div>
-      </div>
-
-      <div class="card aws" data-cloud="aws">
-        <div class="card-header">
-          <span class="card-num">#18</span>
-          <span class="card-platform aws"><span class="platform-icon">🟠</span>AWS</span>
-        </div>
-        <div class="card-domain">Résilience · DR</div>
-        <div class="card-title">Disaster Recovery Cross-Région avec AWS Backup</div>
-        <p class="card-desc">Tester des stratégies RTO/RPO avec S3 Replication cross-région, AWS Backup automatisé, Route 53 Health Checks et failover Policy documenté.</p>
-        <div class="card-tags">
-          <span class="tag aws">SysOps</span>
-          <span class="tag aws">SAA-C03</span>
-          <span class="tag aws">AWS Backup</span>
-          <span class="tag aws">Route 53</span>
-        </div>
-      </div>
-
-      <div class="card aws" data-cloud="aws">
-        <div class="card-header">
-          <span class="card-num">#19</span>
-          <span class="card-platform aws"><span class="platform-icon">🟠</span>AWS</span>
-        </div>
-        <div class="card-domain">Conteneurs · Kubernetes</div>
-        <div class="card-title">Orchestration Microservices avec Amazon EKS + Helm</div>
-        <p class="card-desc">Déployer une application microservices sur Elastic Kubernetes Service avec Helm charts, Ingress Controller, HPA et monitoring via CloudWatch Container Insights.</p>
-        <div class="card-tags">
-          <span class="tag aws">Developer</span>
-          <span class="tag aws">SysOps</span>
-          <span class="tag aws">EKS</span>
-          <span class="tag aws">Helm</span>
-        </div>
-      </div>
-
-      <div class="card aws" data-cloud="aws">
-        <div class="card-header">
-          <span class="card-num">#20</span>
-          <span class="card-platform aws"><span class="platform-icon">🟠</span>AWS</span>
-        </div>
-        <div class="card-domain">Observabilité · Tracing</div>
-        <div class="card-title">Observabilité Avancée avec CloudWatch + AWS X-Ray</div>
-        <p class="card-desc">Instrumenter une application distribuée pour le tracing distribué, métriques custom CloudWatch, dashboards opérationnels et alertes PagerDuty intégrées.</p>
-        <div class="card-tags">
-          <span class="tag aws">SysOps</span>
-          <span class="tag aws">Security Specialty</span>
-          <span class="tag aws">X-Ray</span>
-          <span class="tag aws">CloudWatch</span>
-        </div>
-      </div>
-
-    </div><!-- /aws-grid -->
+    </div>
   </div>
 
+  <div id="cybersec" class="domain-section">
+    <div class="section-divider">
+      <div class="divider-line"></div>
+      <div class="divider-label" style="color:#ef4444;border-color:rgba(239,68,68,0.25);background:rgba(239,68,68,0.1);">🔒 Cybersécurité — 6 sujets</div>
+      <div class="divider-line"></div>
+    </div>
+    <div class="section-header">
+      <div class="section-title" style="--accent:#ef4444;">Cybersécurité</div>
+      <span class="count-badge">6 sujets</span>
+    </div>
+    <div class="cards-grid domain-grid" data-domain="cyber">
+      <div class="card azure" data-domain="cyber">
+        <div class="card-header">
+          <span class="card-num">#02</span>
+          <span class="card-platform azure">☁️ Azure</span>
+        </div>
+        <div class="card-domain-badge" style="color:#ef4444;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);">🔒 Cybersécurité</div>
+        <div class="card-subdomain">Gouvernance · RBAC</div>
+        <div class="card-title">Infrastructure Sécurisée avec Azure Policy & RBAC</div>
+        <p class="card-desc">Déployer un environnement multi-ressources avec gouvernance centralisée, contrôle d'accès RBAC granulaire et conformité automatisée via Azure Policy. Audit logs et alertes de dérive inclus.</p>
+        <div class="card-tags"><span class="tag azure">AZ-104</span><span class="tag azure">AZ-500</span><span class="tag azure">Azure Policy</span><span class="tag azure">RBAC</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span><span class="tool-badge">Miro</span></div>
+      </div>
+      <div class="card azure" data-domain="cyber">
+        <div class="card-header">
+          <span class="card-num">#06</span>
+          <span class="card-platform azure">☁️ Azure</span>
+        </div>
+        <div class="card-domain-badge" style="color:#ef4444;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);">🔒 Cybersécurité</div>
+        <div class="card-subdomain">SIEM · Détection</div>
+        <div class="card-title">SIEM Cloud-Native avec Azure Monitor & Sentinel</div>
+        <p class="card-desc">Mettre en place un système de surveillance avec alertes intelligentes, tableaux de bord de sécurité et réponses automatisées aux incidents via Azure Sentinel. Playbooks SOAR inclus.</p>
+        <div class="card-tags"><span class="tag azure">AZ-500</span><span class="tag azure">SC-900</span><span class="tag azure">Azure Sentinel</span><span class="tag azure">Log Analytics</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span><span class="tool-badge">Miro</span></div>
+      </div>
+      <div class="card azure" data-domain="cyber">
+        <div class="card-header">
+          <span class="card-num">#08</span>
+          <span class="card-platform azure">☁️ Azure</span>
+        </div>
+        <div class="card-domain-badge" style="color:#ef4444;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);">🔒 Cybersécurité</div>
+        <div class="card-subdomain">Réseau · Firewall</div>
+        <div class="card-title">Réseau Hub-and-Spoke Sécurisé avec Azure Firewall</div>
+        <p class="card-desc">Concevoir une topologie réseau d'entreprise avec VNet peering, Azure Firewall Premium, VPN Gateway site-à-site et NSG hiérarchiques. Tests de pénétration réseau inclus.</p>
+        <div class="card-tags"><span class="tag azure">AZ-700</span><span class="tag azure">AZ-500</span><span class="tag azure">Azure Firewall</span><span class="tag azure">VPN GW</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span><span class="tool-badge">Miro</span></div>
+      </div>
+      <div class="card azure" data-domain="cyber">
+        <div class="card-header">
+          <span class="card-num">#10</span>
+          <span class="card-platform azure">☁️ Azure</span>
+        </div>
+        <div class="card-domain-badge" style="color:#ef4444;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);">🔒 Cybersécurité</div>
+        <div class="card-subdomain">Identité · Zero Trust</div>
+        <div class="card-title">Gestion des Identités avec Azure AD B2C & OAuth2</div>
+        <p class="card-desc">Implémenter l'authentification OAuth2/OIDC pour une application multi-tenant avec Azure AD B2C, politiques personnalisées et Conditional Access. MFA et passwordless inclus.</p>
+        <div class="card-tags"><span class="tag azure">AZ-500</span><span class="tag azure">SC-900</span><span class="tag azure">Azure AD B2C</span><span class="tag azure">OAuth2</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span></div>
+      </div>
+      <div class="card aws" data-domain="cyber">
+        <div class="card-header">
+          <span class="card-num">#16</span>
+          <span class="card-platform aws">🟠 AWS</span>
+        </div>
+        <div class="card-domain-badge" style="color:#ef4444;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);">🔒 Cybersécurité</div>
+        <div class="card-subdomain">Zero Trust · IAM</div>
+        <div class="card-title">Sécurité Zero Trust avec IAM, GuardDuty & Security Hub</div>
+        <p class="card-desc">Implémenter IAM least privilege, AWS GuardDuty, Security Hub, KMS pour le chiffrement end-to-end et AWS Config pour la conformité continue. Rapport de conformité automatisé.</p>
+        <div class="card-tags"><span class="tag aws">DVA-C02</span><span class="tag aws">GuardDuty</span><span class="tag aws">Security Hub</span><span class="tag aws">KMS</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span><span class="tool-badge">Miro</span></div>
+      </div>
+      <div class="card aws" data-domain="cyber">
+        <div class="card-header">
+          <span class="card-num">#18</span>
+          <span class="card-platform aws">🟠 AWS</span>
+        </div>
+        <div class="card-domain-badge" style="color:#ef4444;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);">🔒 Cybersécurité</div>
+        <div class="card-subdomain">Résilience · DR</div>
+        <div class="card-title">Disaster Recovery Cross-Région avec AWS Backup</div>
+        <p class="card-desc">Tester des stratégies RTO/RPO avec S3 Replication cross-région, AWS Backup automatisé, Route 53 Health Checks et failover Policy documenté. Runbook de reprise inclus.</p>
+        <div class="card-tags"><span class="tag aws">SOA-C02</span><span class="tag aws">SAA-C03</span><span class="tag aws">AWS Backup</span><span class="tag aws">Route 53</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span><span class="tool-badge">Miro</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="devops" class="domain-section">
+    <div class="section-divider">
+      <div class="divider-line"></div>
+      <div class="divider-label" style="color:#22c55e;border-color:rgba(34,197,94,0.25);background:rgba(34,197,94,0.1);">⚙️ DevOps — 8 sujets</div>
+      <div class="divider-line"></div>
+    </div>
+    <div class="section-header">
+      <div class="section-title" style="--accent:#22c55e;">DevOps</div>
+      <span class="count-badge">8 sujets</span>
+    </div>
+    <div class="cards-grid domain-grid" data-domain="devops">
+      <div class="card azure" data-domain="devops">
+        <div class="card-header">
+          <span class="card-num">#01</span>
+          <span class="card-platform azure">☁️ Azure</span>
+        </div>
+        <div class="card-domain-badge" style="color:#22c55e;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);">⚙️ DevOps</div>
+        <div class="card-subdomain">CI/CD · App Service</div>
+        <div class="card-title">Application Web Scalable avec CI/CD Azure</div>
+        <p class="card-desc">Héberger une application Node.js ou Python sur Azure App Service avec auto-scaling configurable et un pipeline CI/CD complet via Azure DevOps et GitHub Actions. Blue/green deployment inclus.</p>
+        <div class="card-tags"><span class="tag azure">AZ-204</span><span class="tag azure">AZ-400</span><span class="tag azure">App Service</span><span class="tag azure">GitHub Actions</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span></div>
+      </div>
+      <div class="card azure" data-domain="devops">
+        <div class="card-header">
+          <span class="card-num">#04</span>
+          <span class="card-platform azure">☁️ Azure</span>
+        </div>
+        <div class="card-domain-badge" style="color:#22c55e;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);">⚙️ DevOps</div>
+        <div class="card-subdomain">Architecture · HA</div>
+        <div class="card-title">Architecture Haute Disponibilité Multi-Région</div>
+        <p class="card-desc">Concevoir une solution résiliente avec Azure Traffic Manager, Load Balancer applicatif et zones de disponibilité, avec basculement automatique testé. Chaos engineering inclus.</p>
+        <div class="card-tags"><span class="tag azure">AZ-305</span><span class="tag azure">AZ-700</span><span class="tag azure">Traffic Manager</span><span class="tag azure">HA/DR</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span><span class="tool-badge">Miro</span></div>
+      </div>
+      <div class="card azure" data-domain="devops">
+        <div class="card-header">
+          <span class="card-num">#09</span>
+          <span class="card-platform azure">☁️ Azure</span>
+        </div>
+        <div class="card-domain-badge" style="color:#22c55e;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);">⚙️ DevOps</div>
+        <div class="card-subdomain">Serverless · Event-driven</div>
+        <div class="card-title">Traitement d'Événements avec Azure Functions + Event Grid</div>
+        <p class="card-desc">Créer un système de traitement d'événements en temps réel sans serveur avec Azure Functions, Event Grid, Service Bus et stockage Cosmos DB. Monitoring et alertes inclus.</p>
+        <div class="card-tags"><span class="tag azure">AZ-204</span><span class="tag azure">Functions</span><span class="tag azure">Event Grid</span><span class="tag azure">Cosmos DB</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span></div>
+      </div>
+      <div class="card aws" data-domain="devops">
+        <div class="card-header">
+          <span class="card-num">#11</span>
+          <span class="card-platform aws">🟠 AWS</span>
+        </div>
+        <div class="card-domain-badge" style="color:#22c55e;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);">⚙️ DevOps</div>
+        <div class="card-subdomain">Infrastructure · 3-Tier</div>
+        <div class="card-title">Architecture Three-Tier sur AWS avec Auto Scaling</div>
+        <p class="card-desc">Déployer une application web en 3 couches (EC2, RDS Multi-AZ, S3) avec Application Load Balancer, Auto Scaling Group et CloudFront. Infrastructure as Code Terraform inclus.</p>
+        <div class="card-tags"><span class="tag aws">SAA-C03</span><span class="tag aws">EC2</span><span class="tag aws">RDS</span><span class="tag aws">CloudFront</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span><span class="tool-badge">Miro</span></div>
+      </div>
+      <div class="card aws" data-domain="devops">
+        <div class="card-header">
+          <span class="card-num">#12</span>
+          <span class="card-platform aws">🟠 AWS</span>
+        </div>
+        <div class="card-domain-badge" style="color:#22c55e;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);">⚙️ DevOps</div>
+        <div class="card-subdomain">IaC · Automatisation</div>
+        <div class="card-title">Infrastructure as Code avec CloudFormation & Terraform</div>
+        <p class="card-desc">Automatiser le provisionnement complet d'un environnement AWS avec CloudFormation stacks imbriqués ou Terraform modules, avec drift detection et policy as code (OPA).</p>
+        <div class="card-tags"><span class="tag aws">SOA-C02</span><span class="tag aws">DVA-C02</span><span class="tag aws">CloudFormation</span><span class="tag aws">Terraform</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span></div>
+      </div>
+      <div class="card aws" data-domain="devops">
+        <div class="card-header">
+          <span class="card-num">#15</span>
+          <span class="card-platform aws">🟠 AWS</span>
+        </div>
+        <div class="card-domain-badge" style="color:#22c55e;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);">⚙️ DevOps</div>
+        <div class="card-subdomain">CI/CD · Conteneurs</div>
+        <div class="card-title">Pipeline CI/CD Complet avec CodePipeline + ECS Fargate</div>
+        <p class="card-desc">Automatiser le déploiement d'une application conteneurisée Docker sur ECS Fargate via CodePipeline, CodeBuild, ECR et blue/green deployment. Tests automatisés intégrés.</p>
+        <div class="card-tags"><span class="tag aws">DVA-C02</span><span class="tag aws">SOA-C02</span><span class="tag aws">CodePipeline</span><span class="tag aws">ECS Fargate</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span></div>
+      </div>
+      <div class="card aws" data-domain="devops">
+        <div class="card-header">
+          <span class="card-num">#19</span>
+          <span class="card-platform aws">🟠 AWS</span>
+        </div>
+        <div class="card-domain-badge" style="color:#22c55e;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);">⚙️ DevOps</div>
+        <div class="card-subdomain">Kubernetes · Microservices</div>
+        <div class="card-title">Orchestration Microservices avec Amazon EKS + Helm</div>
+        <p class="card-desc">Déployer une application microservices sur Elastic Kubernetes Service avec Helm charts, Ingress Controller, HPA et monitoring via CloudWatch Container Insights. GitOps avec ArgoCD.</p>
+        <div class="card-tags"><span class="tag aws">CKA</span><span class="tag aws">KCNA</span><span class="tag aws">EKS</span><span class="tag aws">Helm</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span><span class="tool-badge">Miro</span></div>
+      </div>
+      <div class="card aws" data-domain="devops">
+        <div class="card-header">
+          <span class="card-num">#20</span>
+          <span class="card-platform aws">🟠 AWS</span>
+        </div>
+        <div class="card-domain-badge" style="color:#22c55e;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);">⚙️ DevOps</div>
+        <div class="card-subdomain">Observabilité · Tracing</div>
+        <div class="card-title">Observabilité Avancée avec CloudWatch + AWS X-Ray</div>
+        <p class="card-desc">Instrumenter une application distribuée pour le tracing distribué, métriques custom CloudWatch, dashboards opérationnels et alertes. Stack OpenTelemetry + Grafana incluse.</p>
+        <div class="card-tags"><span class="tag aws">SOA-C02</span><span class="tag aws">CKS</span><span class="tag aws">X-Ray</span><span class="tag aws">CloudWatch</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="data" class="domain-section">
+    <div class="section-divider">
+      <div class="divider-line"></div>
+      <div class="divider-label" style="color:#f59e0b;border-color:rgba(245,158,11,0.25);background:rgba(245,158,11,0.1);">📊 Data Analysis — 4 sujets</div>
+      <div class="divider-line"></div>
+    </div>
+    <div class="section-header">
+      <div class="section-title" style="--accent:#f59e0b;">Data Analysis</div>
+      <span class="count-badge">4 sujets</span>
+    </div>
+    <div class="cards-grid domain-grid" data-domain="data">
+      <div class="card azure" data-domain="data">
+        <div class="card-header">
+          <span class="card-num">#07</span>
+          <span class="card-platform azure">☁️ Azure</span>
+        </div>
+        <div class="card-domain-badge" style="color:#f59e0b;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.25);">📊 Data Analysis</div>
+        <div class="card-subdomain">Data Lake · Analytics</div>
+        <div class="card-title">Data Lake Analytics avec Azure Synapse + Power BI</div>
+        <p class="card-desc">Ingérer, transformer et visualiser des données massives via un pipeline Azure Data Factory → Synapse Analytics → Power BI avec actualisation automatique et alertes de qualité de données.</p>
+        <div class="card-tags"><span class="tag azure">DP-900</span><span class="tag azure">PL-300</span><span class="tag azure">Synapse</span><span class="tag azure">Power BI</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span><span class="tool-badge">Miro</span></div>
+      </div>
+      <div class="card aws" data-domain="data">
+        <div class="card-header">
+          <span class="card-num">#17</span>
+          <span class="card-platform aws">🟠 AWS</span>
+        </div>
+        <div class="card-domain-badge" style="color:#f59e0b;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.25);">📊 Data Analysis</div>
+        <div class="card-subdomain">ETL · Serverless</div>
+        <div class="card-title">Pipeline de Données avec AWS Glue + Athena + S3</div>
+        <p class="card-desc">Créer un pipeline ETL serverless pour analyser des datasets CSV/JSON stockés sur S3 via Glue Crawlers, transformations Python et requêtes Athena. Data catalog et lineage inclus.</p>
+        <div class="card-tags"><span class="tag aws">DEA-C01</span><span class="tag aws">SAA-C03</span><span class="tag aws">Glue</span><span class="tag aws">Athena</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span></div>
+      </div>
+      <div class="card azure" data-domain="data">
+        <div class="card-header">
+          <span class="card-num">#24</span>
+          <span class="card-platform azure">☁️ Azure</span>
+        </div>
+        <div class="card-domain-badge" style="color:#f59e0b;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.25);">📊 Data Analysis</div>
+        <div class="card-subdomain">Streaming · Temps réel</div>
+        <div class="card-title">Tableau de Bord Temps Réel avec Azure Stream Analytics</div>
+        <p class="card-desc">Construire un pipeline de données en streaming avec Azure Event Hubs, Stream Analytics et Power BI Embedded pour un tableau de bord de KPIs métier mis à jour en temps réel.</p>
+        <div class="card-tags"><span class="tag azure">DP-900</span><span class="tag azure">PL-300</span><span class="tag azure">Event Hubs</span><span class="tag azure">Stream Analytics</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span><span class="tool-badge">Miro</span></div>
+      </div>
+      <div class="card aws" data-domain="data">
+        <div class="card-header">
+          <span class="card-num">#25</span>
+          <span class="card-platform aws">🟠 AWS</span>
+        </div>
+        <div class="card-domain-badge" style="color:#f59e0b;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.25);">📊 Data Analysis</div>
+        <div class="card-subdomain">ML · Prédiction</div>
+        <div class="card-title">Modèle Prédictif avec Amazon SageMaker + QuickSight</div>
+        <p class="card-desc">Entraîner et déployer un modèle de prédiction (churn, fraude, demande) avec SageMaker AutoML, exposer via API Gateway et visualiser les résultats dans QuickSight avec drill-down.</p>
+        <div class="card-tags"><span class="tag aws">AIF-C01</span><span class="tag aws">DEA-C01</span><span class="tag aws">SageMaker</span><span class="tag aws">QuickSight</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span><span class="tool-badge">Miro</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="webdev" class="domain-section">
+    <div class="section-divider">
+      <div class="divider-line"></div>
+      <div class="divider-label" style="color:#3b82f6;border-color:rgba(59,130,246,0.25);background:rgba(59,130,246,0.1);">🌐 Web Dev — 4 sujets</div>
+      <div class="divider-line"></div>
+    </div>
+    <div class="section-header">
+      <div class="section-title" style="--accent:#3b82f6;">Web Dev</div>
+      <span class="count-badge">4 sujets</span>
+    </div>
+    <div class="cards-grid domain-grid" data-domain="webdev">
+      <div class="card aws" data-domain="webdev">
+        <div class="card-header">
+          <span class="card-num">#13</span>
+          <span class="card-platform aws">🟠 AWS</span>
+        </div>
+        <div class="card-domain-badge" style="color:#3b82f6;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.25);">🌐 Web Dev</div>
+        <div class="card-subdomain">API · Serverless</div>
+        <div class="card-title">API REST Serverless avec Lambda + API Gateway + DynamoDB</div>
+        <p class="card-desc">Construire une API REST scalable avec Lambda, API Gateway (REST ou HTTP), DynamoDB et Cognito pour l'authentification, le tout en Serverless Framework. Documentation OpenAPI incluse.</p>
+        <div class="card-tags"><span class="tag aws">DVA-C02</span><span class="tag aws">Lambda</span><span class="tag aws">DynamoDB</span><span class="tag aws">Cognito</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span></div>
+      </div>
+      <div class="card azure" data-domain="webdev">
+        <div class="card-header">
+          <span class="card-num">#26</span>
+          <span class="card-platform azure">☁️ Azure</span>
+        </div>
+        <div class="card-domain-badge" style="color:#3b82f6;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.25);">🌐 Web Dev</div>
+        <div class="card-subdomain">Fullstack · Next.js</div>
+        <div class="card-title">Application Fullstack Next.js déployée sur Azure Static Web Apps</div>
+        <p class="card-desc">Développer une application fullstack avec Next.js (App Router), API Routes, base de données Cosmos DB, authentification Azure AD et déploiement automatisé via GitHub Actions sur Azure Static Web Apps.</p>
+        <div class="card-tags"><span class="tag azure">AZ-204</span><span class="tag azure">Next.js</span><span class="tag azure">Cosmos DB</span><span class="tag azure">Azure AD</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span><span class="tool-badge">Miro</span></div>
+      </div>
+      <div class="card aws" data-domain="webdev">
+        <div class="card-header">
+          <span class="card-num">#27</span>
+          <span class="card-platform aws">🟠 AWS</span>
+        </div>
+        <div class="card-domain-badge" style="color:#3b82f6;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.25);">🌐 Web Dev</div>
+        <div class="card-subdomain">Mobile · React Native</div>
+        <div class="card-title">Application Mobile React Native avec AWS Amplify</div>
+        <p class="card-desc">Construire une application mobile cross-platform (iOS/Android) avec React Native, AWS Amplify pour l'authentification (Cognito), stockage (S3), API (GraphQL AppSync) et notifications push.</p>
+        <div class="card-tags"><span class="tag aws">DVA-C02</span><span class="tag aws">React Native</span><span class="tag aws">Amplify</span><span class="tag aws">AppSync</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span></div>
+      </div>
+      <div class="card multi" data-domain="webdev">
+        <div class="card-header">
+          <span class="card-num">#28</span>
+          <span class="card-platform multi">☁️ Azure / 🟠 AWS</span>
+        </div>
+        <div class="card-domain-badge" style="color:#3b82f6;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.25);">🌐 Web Dev</div>
+        <div class="card-subdomain">E-commerce · Microservices</div>
+        <div class="card-title">Plateforme E-commerce Cloud-Native avec Microservices</div>
+        <p class="card-desc">Concevoir et déployer une plateforme e-commerce complète (catalogue, panier, paiement, notifications) en architecture microservices sur Kubernetes, avec CI/CD, monitoring et tests de charge.</p>
+        <div class="card-tags"><span class="tag multi">AZ-204</span><span class="tag multi">DVA-C02</span><span class="tag multi">Kubernetes</span><span class="tag multi">Stripe API</span></div>
+        <div class="card-tools"><span class="tool-badge">GitHub</span><span class="tool-badge">Jira</span><span class="tool-badge">Miro</span></div>
+      </div>
+    </div>
+  </div>
 </main>
 
-<!-- FOOTER -->
   <footer class="footer">
   <div class="footer-inner">
 
@@ -1272,39 +1403,30 @@
 
 
 <script>
-  function filterCards(type, btn) {
-    // Update active button
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+function filterByDomain(domain, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
 
-    const allCards = document.querySelectorAll('.card');
-    const azureSection = document.getElementById('azure');
-    const awsSection = document.getElementById('aws');
+  const sections = document.querySelectorAll('.domain-section');
+  const cards = document.querySelectorAll('.card');
 
-    allCards.forEach(card => {
-      const cloud = card.dataset.cloud;
-      if (type === 'all' || cloud === type) {
-        card.style.display = '';
-        card.style.animation = 'none';
-        card.offsetHeight; // reflow
-        card.style.animation = '';
+  if (domain === 'all') {
+    sections.forEach(s => s.style.display = '');
+    cards.forEach(c => c.style.display = '');
+  } else {
+    sections.forEach(s => {
+      const grid = s.querySelector('.domain-grid');
+      if (grid && grid.dataset.domain === domain) {
+        s.style.display = '';
       } else {
-        card.style.display = 'none';
+        s.style.display = 'none';
       }
     });
-
-    // Show/hide section headers
-    if (type === 'aws') {
-      azureSection.style.display = 'none';
-      awsSection.style.display = '';
-    } else if (type === 'azure') {
-      azureSection.style.display = '';
-      awsSection.style.display = 'none';
-    } else {
-      azureSection.style.display = '';
-      awsSection.style.display = '';
-    }
+    cards.forEach(c => {
+      c.style.display = c.dataset.domain === domain ? '' : 'none';
+    });
   }
+}
 </script>
 
 </body>
